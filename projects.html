@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Joe Byrd</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Joe Byrd's Cursor Website</h1>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="impressions.html">Impressions</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+            <h1>My Projects</h1>
+            <p class="subtitle">A collection of interactive web applications and games I've built</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h2>Maze Muncher</h2>
+                    <p>A Pacman-inspired game built with HTML5 Canvas and JavaScript. Features classic maze gameplay with ghosts, pellets, and score tracking.</p>
+                    <div class="project-features">
+                        <span class="feature-tag">HTML5</span>
+                        <span class="feature-tag">JavaScript</span>
+                        <span class="feature-tag">Game Development</span>
+                    </div>
+                    <a href="/game" class="btn btn-primary">Play Game</a>
+                </div>
+
+                <div class="project-card">
+                    <h2>Interactive Canvas</h2>
+                    <p>An interactive drawing and visualization tool featuring flow diagrams, node-based interactions, and dynamic visual elements.</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Canvas API</span>
+                        <span class="feature-tag">Interactive Design</span>
+                        <span class="feature-tag">Visualization</span>
+                    </div>
+                    <a href="/canvas" class="btn btn-primary">Explore Canvas</a>
+                </div>
+
+        </div>
+        
+        <div class="project-stats">
+            <h2>Project Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">Latest Update</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>
+          © <span id="year"></span> Joe Byrd. All rights reserved.
+        </small>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
+</body>
+</html>
