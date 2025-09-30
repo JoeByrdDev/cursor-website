@@ -1,0 +1,27 @@
+---
+globs: server.js
+description: Express server configuration and routing
+---
+
+# Server Configuration Rules
+
+## Express Setup
+- Use Express static middleware to serve all files from project root
+- Default port: 3000 (configurable via PORT environment variable
+- Enable CORS and proper headers for development
+
+## Route Structure
+- `/` → [home.html](mdc:home.html)
+- `/about` → [about.html](mdc:about.html)  
+- `/game` → [game.html](mdc:game.html)
+- `/canvas` → [canvas.html](mdc:canvas.html)
+
+## Error Handling
+- 404 handler for unmatched routes
+- Proper HTTP status codes
+- Graceful error responses
+
+## Development Features
+- Console logging for server startup
+- Hot reload support (if using nodemon)
+- Static file serving for assets (CSS, JS, images)

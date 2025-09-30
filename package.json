@@ -1,0 +1,22 @@
+{
+  "name": "cursor-website",
+  "version": "1.0.0",
+  "description": "Joe Byrd's personal website with interactive features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build-advanced.js",
+    "dev": "node server.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "terser": "^5.24.0",
+    "clean-css-cli": "^5.6.2"
+  },
+  "keywords": ["website", "game", "canvas"],
+  "author": "Joe Byrd",
+  "license": "MIT"
+}

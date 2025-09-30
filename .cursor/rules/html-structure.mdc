@@ -1,0 +1,36 @@
+---
+globs: *.html
+description: HTML structure and accessibility guidelines
+---
+
+# HTML Structure Rules
+
+## Document Structure
+- Use semantic HTML5 elements (`<header>`, `<main>`, `<nav>`, `<footer>`)
+- Include proper meta tags for viewport and SEO
+- Link to [styles.css](mdc:styles.css) and relevant JavaScript files
+- Use `defer` attribute for non-critical JavaScript
+
+## Navigation
+- Consistent navigation structure across all pages
+- Use `aria-current="page"` for active navigation items
+- Include `aria-label` for navigation landmarks
+- Maintain consistent header and footer across pages
+
+## Accessibility
+- Use proper heading hierarchy (h1, h2, h3)
+- Include alt text for images
+- Use `aria-live` regions for dynamic content updates
+- Ensure proper color contrast and focus states
+
+## Game Page Specific
+- Canvas element with proper dimensions and styling
+- Status elements for score and lives display
+- Restart button for game reset functionality
+- Proper labeling for screen readers
+
+## Content Guidelines
+- Keep content concise and engaging
+- Use consistent tone and voice
+- Include proper copyright notices in footer
+- Dynamic year display using JavaScript

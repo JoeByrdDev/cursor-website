@@ -1,0 +1,32 @@
+---
+globs: *.js
+description: Game development and JavaScript coding standards
+---
+
+# Game Development Rules
+
+## Game Architecture
+- The game uses a tile-based grid system (20px tiles)
+- Canvas size: 560x620 pixels (28x31 grid)
+- Game state includes: player position, ghosts, pellets, score, lives
+- Animation loop uses `requestAnimationFrame` for smooth 60fps gameplay
+
+## Code Standards
+- Use descriptive variable names (e.g., `TILE`, `COLS`, `ROWS`)
+- Implement proper collision detection for walls and game objects
+- Handle keyboard input with event listeners for arrow keys and WASD
+- Use consistent indentation and spacing
+- Comment complex game logic and algorithms
+
+## Game Features
+- Player movement with collision detection
+- Pellet collection system
+- Ghost AI and movement patterns
+- Score tracking and lives system
+- Game over and restart functionality
+- Responsive canvas that scales on mobile
+
+## Performance
+- Use efficient rendering techniques
+- Minimize DOM manipulation during gameplay
+- Implement proper cleanup for event listeners

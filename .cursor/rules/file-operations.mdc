@@ -1,0 +1,32 @@
+# File Operations Rule
+
+## Overview
+Always use `robocopy` for file copying operations instead of `copy` or `xcopy` commands.
+
+## Rule
+- **ALWAYS** use `robocopy` for copying files and directories
+- **NEVER** use `copy`, `xcopy`, or similar commands that may hang
+- **PREFER** `robocopy` for its reliability and better output handling
+
+## Examples
+
+### Copying files:
+```powershell
+robocopy . destination *.html *.js *.css
+```
+
+### Copying directories:
+```powershell
+robocopy source destination /E
+```
+
+### Copying with specific options:
+```powershell
+robocopy . destination *.html *.js *.css /NFL /NDL /NJH /NJS
+```
+
+## Reasoning
+- `robocopy` is more reliable and doesn't hang like `copy` commands
+- Better error handling and output
+- More control over the copying process
+- Avoids manual cancellation issues
