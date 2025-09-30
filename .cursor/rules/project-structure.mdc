@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+# Project Structure Guide
+
+This is Joe Byrd's Cursor Website - a personal website with interactive features.
+
+## Core Files
+- [server.js](mdc:server.js) - Express server with routes for all pages
+- [styles.css](mdc:styles.css) - Main stylesheet with dark theme and responsive design
+- [game.js](mdc:game.js) - Pacman-like "Maze Muncher" game implementation
+
+## HTML Pages
+- [home.html](mdc:home.html) - Landing page (served at `/`)
+- [about.html](mdc:about.html) - About page (served at `/about`)
+- [game.html](mdc:game.html) - Game page with canvas (served at `/game`)
+- [canvas.html](mdc:canvas.html) - Interactive canvas page (served at `/canvas`)
+
+## Checkpoint System
+- `checkpoint1/` - Contains backup versions of all files for easy reset
+
+## Development
+- Run `node server.js` to start the development server on port 3000
+- All static files are served from the project root
+- The site uses a modern dark theme with CSS custom properties

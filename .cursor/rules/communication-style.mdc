@@ -1,0 +1,36 @@
+# Communication Style Rules
+
+## Question Format
+When the user starts a prompt with "Question:", the AI should:
+- **NOT make any code changes**
+- **Only provide information, explanations, or answers**
+- **Avoid using any file modification tools**
+- **Focus on explaining concepts, answering questions, or providing guidance**
+
+## Suggestion Format
+When the user starts a prompt with "Suggest:", the AI should:
+- **NOT make any code changes**
+- **Show the proposed code changes in a code block**
+- **Explain what the changes would do**
+- **Let the user decide whether to apply the changes or modify the approach**
+- **Useful for complex changes or when context might be too large**
+
+## Code Changes
+For all other prompts (not starting with "Question:" or "Suggest:"):
+- The AI can make code changes as requested
+- Use appropriate tools for file modifications
+- Follow normal development workflow
+
+## Verification
+- **DO NOT ask to run node commands** to verify changes
+- **DO NOT suggest starting the server** to test changes
+- **DO NOT request user to run terminal commands** for verification
+- Trust that changes are applied correctly unless there are obvious errors
+
+## Examples
+- "Question: How does the A* algorithm work?" → Information only
+- "Suggest: Add a new ghost with different AI behavior" → Show code changes, don't apply
+- "Add a new feature to the game" → Make code changes
+- "Question: What's the difference between greedy and A* pathfinding?" → Information only
+- "Suggest: Optimize the collision detection system" → Show code changes, don't apply
+- "Fix the bug in the collision detection" → Make code changes

@@ -1,0 +1,35 @@
+---
+globs: *.css
+description: CSS styling and design system guidelines
+---
+
+# CSS Styling Rules
+
+## Design System
+- Use CSS custom properties (variables) defined in `:root`
+- Color scheme: Dark theme with blue accents (`--accent: #60a5fa`)
+- Typography: System font stack for optimal performance
+- Spacing: Use consistent padding and margin values
+
+## Layout Principles
+- Mobile-first responsive design
+- Use `clamp()` for fluid typography and spacing
+- Container max-width: 1000px with responsive padding
+- Sticky header with backdrop blur effect
+
+## Component Styles
+- Buttons: Gradient background with hover effects and box shadows
+- Cards: Subtle borders, rounded corners, and gradient backgrounds
+- Navigation: Clean links with hover states
+- Status elements: Muted text color for secondary information
+
+## Interactive Elements
+- Smooth transitions (0.2s ease) for hover states
+- Transform effects for button interactions
+- Focus states for accessibility
+- Proper contrast ratios for text readability
+
+## Game-Specific Styles
+- Canvas styling with rounded corners and borders
+- Flow diagram components with distinct node types
+- Widget panel layouts for interactive elements
