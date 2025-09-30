@@ -37,6 +37,16 @@ app.get('/canvas', (req, res) => {
   res.sendFile(path.join(__dirname, 'canvas.html'));
 });
 
+// Route: Projects
+app.get('/projects', (req, res) => {
+  res.sendFile(path.join(__dirname, 'projects.html'));
+});
+
+// Route: Impressions
+app.get('/impressions', (req, res) => {
+  res.sendFile(path.join(__dirname, 'impressions.html'));
+});
+
 // Basic 404 handler for unmatched routes
 app.use((req, res) => {
   res.status(404).send('Not Found');
