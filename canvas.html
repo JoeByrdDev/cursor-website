@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canvas • Joe Byrd's Cursor Website</title>
+    <meta name="description" content="Drag nodes and connect them like a flowchart." />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="canvas.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Joe Byrd's Cursor Website</h1>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="game.html">Game</a>
+          <a href="canvas.html" aria-current="page">Canvas</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section>
+        <h2>Canvas Playground</h2>
+        <p class="status">Add nodes, drag to move, and connect with lines.</p>
+        <div class="widget-panel">
+          <h4>Widgets</h4>
+          <div class="widget-item" draggable="true" data-type="rect">
+            <div class="widget-preview rect">R</div>
+            <span>Rectangle</span>
+          </div>
+          <div class="widget-item" draggable="true" data-type="circle">
+            <div class="widget-preview circle">C</div>
+            <span>Circle</span>
+          </div>
+          <div class="widget-item" draggable="true" data-type="diamond">
+            <div class="widget-preview diamond">D</div>
+            <span>Diamond</span>
+          </div>
+        </div>
+        
+        <div class="flow-toolbar">
+          <button id="import-btn" class="button">Import</button>
+          <button id="clear" class="button">Clear</button>
+        </div>
+
+        <div id="flow-root" class="flow-root">
+          <svg id="flow-svg" class="flow-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+              </marker>
+            </defs>
+          </svg>
+          <div id="flow-board" class="flow-board" aria-label="Canvas board"></div>
+          <div id="flow-menu" class="flow-menu" role="menu" aria-hidden="true">
+            <button id="menu-label" role="menuitem">Label</button>
+            <button id="menu-delete" role="menuitem">Delete</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Canvas Data</h3>
+        <p class="status">Live representation of canvas state (JSON):</p>
+        <textarea id="canvas-json" readonly style="width:100%; height:200px; font-family:monospace; background:#0b1022; color:#e5e7eb; border:1px solid #1f2937; border-radius:8px; padding:12px; resize:vertical;"></textarea>
+      </section>
+    </main>
+
+    <!-- Import lightbox -->
+    <div id="import-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center;">
+      <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:24px; max-width:600px; width:90%;">
+        <h3 style="margin-top:0;">Import Canvas Data</h3>
+        <p class="status">Paste JSON data to recreate the canvas:</p>
+        <textarea id="import-text" placeholder="Paste canvas JSON here..." style="width:100%; height:300px; font-family:monospace; background:#0b1022; color:#e5e7eb; border:1px solid #1f2937; border-radius:8px; padding:12px; resize:vertical;"></textarea>
+        <div style="margin-top:16px; display:flex; gap:8px; justify-content:flex-end;">
+          <button id="import-cancel" class="button">Cancel</button>
+          <button id="import-confirm" class="button">Import</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>
+          © <span id="year"></span> Joe Byrd. All rights reserved.
+        </small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

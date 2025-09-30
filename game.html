@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game • Joe Byrd's Cursor Website</title>
+    <meta name="description" content="Pacman-like JavaScript game." />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="game.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Joe Byrd's Cursor Website</h1>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="game.html" aria-current="page">Game</a>
+          <a href="canvas.html">Canvas</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section>
+        <h2>Maze Muncher</h2>
+        <p id="hud" class="status">Score: <span id="score">0</span> • Lives: <span id="lives">3</span></p>
+        <canvas id="game" width="560" height="620" style="background:#000; display:block; max-width:100%; height:auto; border-radius:12px; border:1px solid #1f2937;"></canvas>
+        <p id="message" class="status" aria-live="polite"></p>
+        <button id="restart" class="button" style="margin-top:12px;">Restart</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>
+          © <span id="year"></span> Joe Byrd. All rights reserved.
+        </small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+
+

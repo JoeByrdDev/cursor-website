@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About • Joe Byrd's Cursor Website</title>
+    <meta name="description" content="About Joe Byrd." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Joe Byrd's Cursor Website</h1>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="game.html">Game</a>
+          <a href="canvas.html">Canvas</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section>
+        <h2>About</h2>
+        <p>
+          Joe Byrd is a courageous and resourceful hero known for stepping into
+          tough situations and finding a way forward. Whether it’s a challenge in
+          the real world or a puzzle in code, Joe stays calm, thinks clearly, and
+          executes with precision.
+        </p>
+        <p>
+          As a skilled programmer, Joe Byrd writes clean, thoughtful software and
+          leads with empathy and curiosity. He values clarity, reliability, and
+          craftsmanship—qualities that turn complex problems into well-structured,
+          maintainable solutions.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>
+          © <span id="year"></span> Joe Byrd. All rights reserved.
+        </small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

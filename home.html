@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Joe Byrd's Cursor Website</title>
+    <meta name="description" content="Welcome to my website." />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-brand">
+          <h1 class="site-title">Joe Byrd's Cursor Website</h1>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html" aria-current="page">
+            Home
+          </a>
+          <a href="about.html">
+            About
+          </a>
+          <a href="game.html">
+            Game
+          </a>
+          <a href="canvas.html">
+            Canvas
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section>
+        <h2>Welcome to my website</h2>
+        <p>
+          This is my first project vibe coding with generative AI programming tools. I think they're really neat.
+        </p>
+      </section>
+      <section>
+        <h2>Impressions</h2>
+        <p>
+          Using Cursor to make a basic PacMan clone and Canvas application has given me some insights into generative AI tools. The productivity boost this provides experienced developers (like me) is astounding.
+        </p>
+        
+        <h3>Pros (AI Generated)</h3>
+        <ul>
+          <li>Dramatically speeds up initial project setup and boilerplate code</li>
+          <li>Excellent at understanding context and generating relevant code</li>
+          <li>Great for exploring new technologies and frameworks quickly</li>
+          <li>Reduces time spent on repetitive coding tasks</li>
+          <li>Provides helpful suggestions and alternative approaches</li>
+        </ul>
+        
+        <h3>Cons (AI Generated)</h3>
+        <ul>
+          <li>Sometimes generates code that needs significant debugging</li>
+          <li>May not always follow best practices or project-specific conventions</li>
+          <li>Requires clear communication to get the desired output</li>
+          <li>Can be overly verbose or miss the mark on requirements</li>
+          <li>Still needs human oversight and code review</li>
+        </ul>
+
+        <p>I requested that Cursor make a Pros and Cons bulleted section. It took a couple seconds and worked nicely. What it also did was generate the Pros and Cons content <i>for me,</i> hinting at some of the more nuanced aspects of using a tool like this. Let me provide my own Pros and Cons.</p>
+
+        <h3>Pros</h3>
+        <ul>
+          <li>Tons of repetitive, heavily-standardized code can be created in moments</li>
+          <li>The examples it provides and code it writes tend to work, so you can generate bespoke code you can then study and learn from, even if you are only vaguely familiar with what it's functionally doing</li>
+          <li>The AI lists precise communication as a Con. I think it's one of the greatest benefits - the necessity for concise ideas and phrasing will lead to better human-to-human communication, too</li>
+          <li>On top of that, Rubber Duck Debugging (explaining your issue with words to a rubber duck to better understand your thought process) is implicit in everything you use AI to do</li>
+          <li>Heavily benefits from, and practically requires, human cooperation and insight</li>
+          <li>This tool in particular can provide useful content suggestions, installation instructions, moral support, and other more open-ended assistance than just code</li>
+          <li>With all the code that is going to be written by AI, good programming standards will become more common and programs of all kinds will take on more unform look. This will make it easier to debug and refactor for both humans and robots</li>
+        </ul>
+        
+        <h3>Cons</h3>
+        <ul>
+          <li>The AI can get stuck in debugging loops, attempting the same kinds of strategies to fix problems and providing the incorrect solutions over-and-over with absolute confidence</li>
+          <li>The AI will happily provide structure for the code, which will become an inescapable trap if followed blindly and will lead to a project that feels like it should work, but would be impossible to refactor without completely changing the approach and organization</li>
+          <li>Exponential context growth</li>
+          <li>The AI can infer what kind of visual/rendering effects will occur from it's changes, but cannot see and interact with them as a human can</li>
+          
+        </ul>
+        <h3>I'm not sure if these are good or bad</h3>
+        <ul>
+          <li>AI is going to become a major proponent of code standards</li>
+          <li>The AI's willingness to use my Jargon for everything may lead to siloed language instead of universal, but makes navigating my own context intuitive</li>
+        </ul>
+        <h3>Specific Example</h3>
+        <p>
+          On the canvas page, there are rectangle, circle, and diamond widgets that can be dragged unto the canvas and connected up. This worked instantly for the rectangle and circle widgets, which it provided as an example when generating the app entirely from my prompt. I asked it to add a diamond widget, which led to issues. The AI decided that the best way to make the diamond would be to apply a rotation transform to a square. This caused the text to be rotated and the connector lines to not line up with the visuals. The AI was absolutely unable to resolve this issue, and kept making changes in attempts to fix it that broke other aspects of the canvas.
+        </p>
+        <p>
+          What ended up solving this issue was a suggestion from me: Instead of using a rotation transform or pseudo elements, which are difficult to work with and would require complex math considerations with every other functional part of the canvas, we could just render something that looked like a diamond behind the actual widget, which is a circle and also invisible. Since the widget didn't need to "BE" a diamond, just appear like one to a human, we took the more simple approach and solved the issue in a way that was more compatible with the existing functionality.
+        </p>
+        <p>
+          This also gave me some reasonable hope for my career security, at least for the next half decade or so.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>
+          © <span id="year"></span> Joe Byrd. All rights reserved.
+        </small>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+

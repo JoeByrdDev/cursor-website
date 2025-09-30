@@ -1,0 +1,359 @@
+/* Modern color scheme based on color theory principles */
+:root {
+  /* Primary color palette */
+  --primary: #5b406a;        /* Main purple - trust, creativity */
+  --primary-light: #7a5a8a;  /* Lighter purple for hover states */
+  --primary-dark: #4a3458;   /* Darker purple for depth */
+  --primary-bg: #f8f6f9;     /* Very light purple for backgrounds */
+  
+  /* Accent color palette */
+  --accent: #d2b71f;         /* Golden yellow - energy, optimism */
+  --accent-light: #e6c94a;   /* Lighter gold for highlights */
+  --accent-dark: #c4a52a;    /* Darker gold for depth */
+  --accent-contrast: #2d2a1f; /* Dark text on gold */
+  
+  /* Neutral color palette */
+  --neutral: #313647;        /* Dark blue-gray - stability */
+  --neutral-light: #4a5162;  /* Lighter neutral for borders */
+  --neutral-dark: #252a35;   /* Darker neutral for depth */
+  
+  /* Background and text colors */
+  --bg: #1a1d26;             /* Dark background using neutral */
+  --bg-secondary: #252a35;   /* Secondary background */
+  --panel: #2a2f3d;          /* Panel background */
+  --text: #e8e9ea;           /* Primary text */
+  --text-muted: #a8abb0;     /* Muted text */
+  --text-inverse: #1a1d26;   /* Text on light backgrounds */
+  
+  /* Border and shadow colors */
+  --border: #3a3f4e;         /* Standard borders */
+  --border-light: #4a5162;   /* Light borders */
+  --shadow: rgba(49, 54, 71, 0.3); /* Shadow color */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: 
+    /* Subtle dot pattern */
+    radial-gradient(circle at 25% 25%, rgba(91, 64, 106, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(210, 183, 31, 0.08) 1px, transparent 1px),
+    /* Subtle grid pattern */
+    linear-gradient(90deg, rgba(49, 54, 71, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(49, 54, 71, 0.05) 1px, transparent 1px);
+  background-size: 
+    40px 40px,  /* Dot pattern size */
+    40px 40px,  /* Dot pattern size */
+    20px 20px,  /* Grid pattern size */
+    20px 20px;  /* Grid pattern size */
+  background-position: 
+    0 0, 20px 20px,  /* Offset dot patterns */
+    0 0, 0 0;        /* Grid patterns */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: color-mix(in oklab, var(--primary) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px clamp(20px, 4vw, 48px);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--accent-light);
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.site-nav a:hover, .site-nav a:focus {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  transform: translateY(-1px);
+}
+
+.site-main {
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+
+.hero {
+  background: linear-gradient(180deg, var(--primary-dark) 0%, var(--panel) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h2, h3 {
+  line-height: 1.25;
+  margin-top: 0;
+  color: var(--text);
+}
+
+h2 {
+  color: var(--accent-light);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  color: var(--accent-dark);
+}
+
+h4 {
+  color: var(--accent-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+section + section {
+  margin-top: 32px;
+}
+
+/* Enhanced visual hierarchy */
+ul, ol {
+  color: var(--text);
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Link styles */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Selection colors */
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.button {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  color: var(--accent-contrast);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(210, 183, 31, 0.4);
+  transition: transform 0.06s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(210, 183, 31, 0.5);
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+}
+
+.button:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+.status {
+  min-height: 1.2em;
+  color: var(--text-muted);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--neutral-dark);
+  padding: 24px 0;
+}
+
+.site-footer small {
+  color: var(--text-muted);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .site-header .container { flex-wrap: wrap; gap: 8px; }
+  .site-nav a { margin-left: 8px; }
+  .hero { padding: 20px; }
+  
+  /* Adjust pattern size for mobile */
+  body {
+    background-size: 
+      30px 30px,  /* Smaller dot pattern for mobile */
+      30px 30px,  
+      15px 15px,  /* Smaller grid pattern for mobile */
+      15px 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Larger pattern for big screens */
+  body {
+    background-size: 
+      50px 50px,  /* Larger dot pattern for desktop */
+      50px 50px,  
+      25px 25px,  /* Larger grid pattern for desktop */
+      25px 25px;
+  }
+}
+
+
+/* Widget panel styles */
+.widget-panel { 
+  margin-bottom: 16px; 
+  padding: 16px; 
+  background: linear-gradient(180deg, var(--primary-dark) 0%, var(--panel) 100%); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.widget-panel h4 { 
+  margin: 0; 
+  color: var(--text); 
+  font-size: 0.875rem; 
+  font-weight: 600; 
+  min-width: 60px; 
+}
+.widget-item { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 8px; 
+  border-radius: 8px; 
+  cursor: grab; 
+  transition: background 0.2s ease; 
+}
+.widget-item:hover { 
+  background: rgba(210, 183, 31, 0.15); 
+}
+.widget-item:active { 
+  cursor: grabbing; 
+}
+.widget-preview { 
+  width: 40px; 
+  height: 40px; 
+  display: grid; 
+  place-items: center; 
+  font-size: 0.75rem; 
+  font-weight: 600; 
+  color: var(--text-inverse); 
+  border-radius: 6px; 
+}
+.widget-preview.rect { 
+  background: var(--primary); 
+  border-radius: 4px; 
+}
+.widget-preview.circle { 
+  background: var(--accent); 
+  border-radius: 50%; 
+}
+.widget-preview.diamond { 
+  background: var(--neutral-light); 
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.widget-item span { 
+  font-size: 0.75rem; 
+  color: var(--muted); 
+}
+
+/* Flow canvas styles */
+.flow-toolbar { margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.flow-root { position: relative; height: 560px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--neutral-dark); }
+.flow-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: auto; }
+.flow-board { position: absolute; inset: 0; }
+.flow-node { position: absolute; color: var(--text-inverse); font-weight: 600; user-select: none; cursor: move; display: grid; place-items: center; }
+.flow-node.rect { width: 120px; height: 64px; background: var(--primary); border-radius: 10px; box-shadow: 0 6px 18px rgba(91, 64, 106, 0.35); }
+.flow-node.circle { width: 72px; height: 72px; background: var(--accent); border-radius: 50%; box-shadow: 0 6px 18px rgba(210, 183, 31, 0.35); }
+.flow-node.diamond { width: 86px; height: 86px; background: var(--neutral-light); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); box-shadow: 0 6px 18px rgba(49, 54, 71, 0.35); }
+.flow-node.diamond + .ports { 
+  position: absolute; 
+  width: 86px; 
+  height: 86px; 
+  pointer-events: none; 
+  z-index: 10; 
+}
+.flow-node.diamond + .ports .flow-port { 
+  position: absolute; 
+  width: 10px; 
+  height: 10px; 
+  background: var(--accent); 
+  border: 2px solid var(--neutral-dark); 
+  border-radius: 50%; 
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+.flow-node.diamond + .ports .flow-port.t { top: 0%; left: 50%; }
+.flow-node.diamond + .ports .flow-port.b { top: 100%; left: 50%; }
+.flow-node.diamond + .ports .flow-port.l { top: 50%; left: 0%; }
+.flow-node.diamond + .ports .flow-port.r { top: 50%; left: 100%; }
+.flow-node .ports { position: absolute; inset: 0; }
+.flow-port { position: absolute; width: 10px; height: 10px; background: var(--accent); border: 2px solid var(--neutral-dark); border-radius: 50%; transform: translate(-50%, -50%); }
+.flow-port.t { top: 0%; left: 50%; }
+.flow-port.b { top: 100%; left: 50%; }
+.flow-port.l { top: 50%; left: 0%; }
+.flow-port.r { top: 50%; left: 100%; }
+.flow-node:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.flow-connecting { pointer-events: none; }
+
+/* Flow context menu */
+.flow-menu { position: absolute; background: var(--neutral-dark); color: var(--text); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 10px 30px var(--shadow); padding: 6px; display: none; z-index: 30; min-width: 140px; }
+.flow-menu button { width: 100%; text-align: left; padding: 8px 10px; background: transparent; border: none; color: var(--text); border-radius: 8px; cursor: pointer; }
+.flow-menu button:hover { background: var(--primary-dark); }
+
+
