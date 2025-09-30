@@ -45,6 +45,8 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
   background-image: 
     /* Subtle dot pattern */
     radial-gradient(circle at 25% 25%, rgba(91, 64, 106, 0.1) 1px, transparent 1px),
@@ -67,6 +69,7 @@ body {
   margin: 0 auto;
   padding-left: clamp(20px, 4vw, 48px);
   padding-right: clamp(20px, 4vw, 48px);
+  width: 100%;
 }
 
 .site-header {
@@ -111,6 +114,9 @@ body {
 .site-main {
   padding-top: 32px;
   padding-bottom: 64px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero {
@@ -296,15 +302,15 @@ a:hover {
   border-radius: 6px; 
 }
 .widget-preview.rect { 
-  background: var(--primary); 
+  background: #7c3aed; /* Brighter purple for better contrast */
   border-radius: 4px; 
 }
 .widget-preview.circle { 
-  background: var(--accent); 
+  background: #f59e0b; /* Brighter orange-gold for better contrast */
   border-radius: 50%; 
 }
 .widget-preview.diamond { 
-  background: var(--neutral-light); 
+  background: #10b981; /* Bright emerald green for better contrast */
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 .widget-item span { 
@@ -318,9 +324,9 @@ a:hover {
 .flow-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: auto; }
 .flow-board { position: absolute; inset: 0; }
 .flow-node { position: absolute; color: var(--text-inverse); font-weight: 600; user-select: none; cursor: move; display: grid; place-items: center; }
-.flow-node.rect { width: 120px; height: 64px; background: var(--primary); border-radius: 10px; box-shadow: 0 6px 18px rgba(91, 64, 106, 0.35); }
-.flow-node.circle { width: 72px; height: 72px; background: var(--accent); border-radius: 50%; box-shadow: 0 6px 18px rgba(210, 183, 31, 0.35); }
-.flow-node.diamond { width: 86px; height: 86px; background: var(--neutral-light); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); box-shadow: 0 6px 18px rgba(49, 54, 71, 0.35); }
+.flow-node.rect { width: 120px; height: 64px; background: #7c3aed; border-radius: 10px; box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35); }
+.flow-node.circle { width: 72px; height: 72px; background: #f59e0b; border-radius: 50%; box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35); }
+.flow-node.diamond { width: 86px; height: 86px; background: #10b981; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35); }
 .flow-node.diamond + .ports { 
   position: absolute; 
   width: 86px; 
